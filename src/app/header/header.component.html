@@ -1,0 +1,54 @@
+<mat-toolbar color="accent">
+    <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>MUW</span>
+    <span class="example-spacer"></span>
+    <button mat-button>Home</button>
+  </mat-toolbar>
+
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <button mat-flat-button>
+            Cinemas
+          </button>
+          <button mat-flat-button>
+            Sports
+          </button>
+          <button mat-flat-button>
+            WildLife
+          </button>
+          <button mat-flat-button>
+
+          </button>
+    </mat-drawer>
+    <div class="table">
+      <table mat-table class="mat-elevation-z8" [dataSource] = "dataSource">
+    
+    
+      <!-- <div style="display: none;"> -->
+          <mat-toolbar-row>
+          <ng-container matColumnDef = "id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Sno. </th>
+            <td mat-cell *matCellDef = "let sno">{{sno.id}}</td>
+          </ng-container>
+    
+            <ng-container matColumnDef = "date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
+            <td mat-cell *matCellDef = "let Date">{{Date.date}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPTION </th>
+            <td mat-cell *matCellDef="let Description"> {{Description.description}} </td>
+          </ng-container>
+            <tr mat-header-row *matHeaderRowDef="display"></tr>
+            <tr mat-row *matRowDef="let row; columns: display;"></tr>
+    
+          </mat-toolbar-row>
+        <!-- </div> -->
+      </table> 
+    </div>
+  </mat-drawer-container>
+
+
