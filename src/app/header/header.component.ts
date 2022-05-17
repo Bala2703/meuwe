@@ -7,6 +7,7 @@ import {MatTable, MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  show = false;
   display: string[] = ['id','date','description'];
   dataSource = new MatTableDataSource <getData>();
   constructor(private getService:GetService) { }
@@ -31,6 +32,7 @@ time = new Date();
 export interface getData{
     
   id : string;
+  title : string;
     date : string;
     description : string;
 }

@@ -17,29 +17,9 @@
     position: fixed;
     /* opacity: 0.1; */
   }
-  table{
-      width:100%;
-  }
-  .table{
-      overflow:hidden;
-      scrollbar-width:none;
-  }
-  .example-card {
-    max-width: 15%;
-    /* margin-right: 10px; */
-  }
-  .example-container .example-card{
-    margin: 1%;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
 
 
-
-  .cardBox {
+  /* .cardBox {
     position: relative;
     width: 100%;
     padding-top: 20px;
@@ -51,15 +31,16 @@
 .cardBox .card {
     position: relative;
     background: #fff;
-    padding: 20px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.cardBox .card .numbers {
+.cardBox .card .date {
+  top: 0;
     position: relative;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 500;
 }
 
@@ -79,6 +60,48 @@
 }
 @media (max-width:480px){
   .cardBox{
+    grid-template-columns: repeat(1,1fr);
+  }
+} */
+
+.example-card {
+  max-width: 400px;
+}
+.card-body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+mat-card-content{
+  font-size: 15px;
+    line-height: 18px;
+    height: 39px;
+    overflow: hidden;
+}
+mat-card-header mat-card-title{
+  font-size: 1.2rem;
+}
+.show {
+  overflow: visible;
+  height: auto;
+}
+.example-card mat-card-content p{
+  display: flex;
+  margin-left: 12px;
+}
+.example-card mat-card-actions{
+  bottom: 0;
+}
+
+
+@media (max-width:768px) {
+  .card-body{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width:480px){
+  .card-body{
     grid-template-columns: repeat(1,1fr);
   }
 }
