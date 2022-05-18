@@ -1,0 +1,104 @@
+
+.card{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.example-card{
+    width: 350px;
+    height: 370px;
+}
+
+
+
+input[type="email"],
+input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(3em + 2px);
+    margin: 0 0 1em;
+    padding: 9px;
+    border: 1px solid #b3b3b3;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+  }
+  input[type="email"]:focus
+  ,input[type="password"]:focus {
+    border-color: #000;
+}
+  input[type="email"]:focus + label[placeholder]:before,
+  input[type="password"]:focus + label[placeholder]:before {
+    color: #0091da;
+  }
+  input[type="email"]:focus + label[placeholder]:before,
+  input[type="email"]:valid + label[placeholder]:before,
+  input[type="password"]:focus + label[placeholder]:before,
+  input[type="password"]:valid + label[placeholder]:before {
+    transition-duration: .2s;
+    transform: translate(0, -1.6em) scale(0.9, 0.9);	
+      font-weight: bold;
+  }
+
+  input[type="email"]:invalid + label[placeholder][alt]:before,
+  input[type="password"]:invalid + label[placeholder][alt]:before {
+    content: attr(alt);
+  }
+  input[type="email"] + label[placeholder] ,
+  input[type="password"] + label[placeholder]{
+    display: block;	
+    pointer-events: none;
+    line-height: 1.25em;
+    margin-top: calc(-3em - 8px);
+    margin-bottom: calc((3em - 1em) + 2px);
+  }
+  input[type="email"] + label[placeholder]:before,
+  input[type="password"] + label[placeholder]:before {
+    content: attr(placeholder);
+    display: inline-block;
+    margin: 0 calc(0.5em + 9px);
+    padding: 0 2px;
+    color: #7d7d7d;
+    white-space: nowrap;
+    transition: 0.4s ease-in-out;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+    background-size: 100% 7px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card .example-card .forgot{
+      text-decoration: none;
+    color:#0091da;
+    cursor: pointer;;
+    margin-left: 10px;
+  }
+  .card .example-card .dont{
+    text-decoration: none;
+    color:#0091da;
+    cursor: pointer;
+    display: flex;
+    justify-content:right;
+    text-align: right;
+    margin-top: -20px;
+  }
+  .example-card mat-card-actions {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+  }
+  .example-card mat-card-actions button{
+      width: 100%;
+      background: #49b0e4;
+      color: #fff;
+      border-radius: 30px;
+      padding: 6px;
+      margin: 0px 30px;
+      margin-bottom: 20px;
+}
+.example-card mat-card-actions button:hover{
+    background: #1d9cdb;
+}
