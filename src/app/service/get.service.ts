@@ -8,7 +8,10 @@ export class GetService {
     description:any;
   constructor(private http:HttpClient) { }
   getReq(){
-      return this.http.get<any>('http://localhost:3000/cinemas')
+      return this.http.get<any>('http://localhost:3000/cinemas');
+  }
+  getUser(){
+    return this.http.get<any>('http://localhost:3000/login');
   }
 }
 
