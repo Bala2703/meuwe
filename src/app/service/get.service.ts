@@ -11,7 +11,7 @@ export class GetService {
       return this.http.get<any>('http://localhost:3000/cinemas');
   }
   getUser(){
-    return this.http.get<any>('http://localhost:3000/login');
+    return this.http.get<any>('http://localhost:3000/auth');
   }
 }
 

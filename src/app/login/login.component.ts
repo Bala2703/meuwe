@@ -12,37 +12,32 @@ import { GetService } from '../service/get.service';
 export class LoginComponent implements OnInit {
 
   active = true;
-
-  dataSource = new MatTableDataSource<getUser>();
-  userData : getUser[] = [];
-  interval: any;
-
-  time = new Date();
-
+  admin: any;
 
   constructor(private router: Router,
     private http: HttpClient,
     private getService: GetService) {
   }
 
+
   ngOnInit(): void {
 
-  }
+}
   onClick(value: any, password: any) {
-
     console.log(value, password)
-    this.http.post('http://localhost:3000/login', { 'email': value, 'password': password })
-      .subscribe(data => {
-        console.log(data);
-      });
+    this.http.post('http://localhost:3000/auth', { 'email': value, 'password': password })
+    .subscribe((data) => {
+      this.admin = data as getUser[];
+      if(this.admin.redirect == '/admin'){
+      this.router.navigate([this.admin.redirect]);
+      }
+      else{
+        window.alert(this.admin.error);
+      }
+    })
   }
 
-  refreshData(){
-    this.getService.getUser()
-      .subscribe(data => {this.dataSource.data = data as getUser[];
-      });
-      console.log(this.dataSource.data[0].name);
-    }
+
   
 
 }
@@ -52,5 +47,7 @@ export interface getUser {
   name: string;
   email: string;
   loginstatus: number;
+  redirect : string;
+  error : string;
 }
 

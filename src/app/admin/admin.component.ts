@@ -8,7 +8,6 @@ import { GetService } from 'src/app/service/get.service';
 })
 export class AdminComponent implements OnInit {
 
-  @Input() dataSource! : any;
 
   constructor(private getservice : GetService) { }
 
@@ -16,7 +15,6 @@ export class AdminComponent implements OnInit {
   interval:any;
 
   ngOnInit(): void {
-
 
   }
 
